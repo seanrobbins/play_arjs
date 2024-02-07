@@ -34,8 +34,8 @@ jobs:
           node-version: 16
           cache: 'pnpm'
           cache-dependency-path: pnpm-lock.yaml
-      - run: npm ci
-      - run: npm run build
+      - run: pnpm ci
+      - run: pnpm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
