@@ -23,12 +23,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: pnpm-setup
+        uses: pnpm/action-setup@v2
       - uses: actions/configure-pages@v1
         id: pages
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: 'pnpm'
           cache-dependency-path: pnpm-lock.yaml
       - run: npm ci
       - run: npm run build
